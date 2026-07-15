@@ -73,7 +73,39 @@
 
 										<hr class="major" />
 
+									<h2>The Product Vision</h2>
+									<span class="image main"><img src="img/the_product_vision.png" alt="" /></span>
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<p>Before discussing interface decisions, it is important to understand what BRYX was trying to accomplish.</p> 
+
+												<p>The platform was built around a simple but ambitious idea: make advanced engineering AI accessible through a cloud-based marketplace of specialized models.</p>
+
+												<p>Each model performs a distinct task within a larger engineering workflow. RoboClean automatically removes noise from point cloud scans. RoboFlat analyzes cleaned point clouds to generate concrete floor flatness measurements. Other models focus on different inspection, analysis, and detection tasks, but they all follow the same fundamental lifecycle:</p>
+
+												<p>Select data → Configure the model → Execute analysis → Review results.</p>
+
+												<p>From the user’s perspective, the experience should feel consistent regardless of which model they choose. From the product’s perspective, however, each model introduces unique requirements, parameters, validations, and outputs.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<p>The design challenge was not simply creating an attractive workflow for RoboFlat or RoboClean. It was defining a scalable interaction pattern that future models could adopt without requiring users to learn a new experience every time the platform expanded.</p>
+
+												<p>That commonality revealed an opportunity.</p>
+
+												<p>RoboClean and RoboFlat were especially important because they represented two connected stages in a real engineering workflow. RoboClean prepared point cloud data by removing noise. RoboFlat could then use the cleaned point cloud to perform floor flatness analysis. Technically, these were separate AI models. From the user’s point of view, they were consecutive steps in a single task.</p>
+
+												<p>That relationship became one of the most important design opportunities in the project.</p>
+											</div>
+										</div>
+
+										<img src="img/engineering_workflow_diagram.png"class="image fit" alt="" />
+
+										<hr class="major" />
+
 										<h2>My Role</h2>
+
+										<img src="img/delivery_diagram.png"class="image fit" alt="" />
 
 										<div class="row">
 											<div class="6u 12u$(small)">
@@ -84,10 +116,10 @@
 												<p>My responsibilities included leading interaction and workflow design for new platform capabilities, translating Azure DevOps requirements into user flows and high-fidelity interfaces, collaborating with product, business analysis, machine learning, and engineering during weekly design reviews, moderating usability studies with engineering professionals, and conducting post-implementation design QA.</p>
 
 												<p>The core product team included Catherine, the Product Manager and my direct manager, who owned the product roadmap and much of the product copywriting; Rhonda, the Business Analyst and Scrum Master, who managed Azure DevOps tickets, sprint priorities, backlog refinement, and requirement documentation; James, the RoboFlat domain expert; Karl, the lead machine learning engineer responsible for training the models; Grace, the full-stack engineer responsible for frontend UI implementation and backend development; Brendan, who managed data pipeline and infrastructure work; and Jeanne, the Director of Technology and Innovation and the leading stakeholder for the BRYX platform.</p>
+
+												<p>My design decisions were validated or challenged by this group through recurring reviews and implementation feedback. I worked primarily from written requirements, then collaborated with Rhonda and Catherine to better understand the business goals, user needs, technical constraints, and expected behavior behind each ticket.</p>
 											</div>
 											<div class="6u 12u$(small)">
-												<p>My design decisions were validated or challenged by this group through recurring reviews and implementation feedback. I worked primarily from written requirements, then collaborated with Rhonda and Catherine to better understand the business goals, user needs, technical constraints, and expected behavior behind each ticket.</p>
-
 												<p>Our team followed a repeatable sprint rhythm:</p>
 
 												<p>Each Monday, I met with Catherine and Rhonda to review priorities for the week and discuss new requirements.</p>
@@ -105,6 +137,8 @@
 												<p>This continuous loop allowed the platform to evolve incrementally rather than through large, disconnected redesigns.</p>
 											</div>
 										</div>
+
+										<img src="img/design_sprint_cadence.png"class="image fit" alt="Design Sprint Cadence" />
 
 										<hr class="major" />
 
@@ -543,6 +577,277 @@
 										</div>
 
 										<hr class="major" />
+
+										<h2>Designing Through Validation</h2>
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<p>By the time RoboClean integration entered usability testing, the interface had already gone through multiple design reviews, engineering discussions, and implementation refinements.</p>
+</p>
+
+												<p>The goal of research was no longer simply to answer whether users could complete the workflow.</p>	
+
+												<p>The more interesting question was whether they understood why the workflow behaved the way it did.</p>
+
+												<p>That distinction mattered because BRYX was not simply digitizing an existing engineering process.</p>
+												
+												<p>It was introducing new ways of working.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<p>The product automated tasks that many users had historically performed themselves, and automation only creates value when users understand and trust what the system is doing on their behalf.</p>
+
+												<p>Rather than evaluating isolated screens, I structured usability sessions around realistic engineering scenarios that encouraged participants to think aloud while completing model runs.</p>
+												
+												<p>Those conversations revealed far more than usability issues.</p>
+
+												<p>They revealed expectations.</p>
+											</div>	
+										</div>
+
+										<hr class="major" />
+
+										<h2>Observing Mental Models</h2>
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<p>One recurring pattern emerged almost immediately.</p>
+
+												<p>Participants interpreted the interface through the workflows they already knew.</p>	
+
+												<p>When asked how they would use RoboClean output within RoboFlat, users frequently described downloading processed files, uploading them as new datasets, and manually recreating relationships that the platform was already capable of managing automatically. In one session, a participant explicitly said they did not know from the screen whether the results could be used directly as a dataset input for a new run.</p>
+
+												<p>From a technical perspective, those extra steps were unnecessary.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<p>From the user’s perspective, they were completely reasonable.</p>
+
+												<p>The interface had not yet fully communicated that BRYX had assumed responsibility for those tasks.</p>
+
+												<p>Rather than viewing this as user error, I viewed it as a design opportunity.</p>
+												
+												<p>The problem was not that users misunderstood the technology.</p>
+
+												<p>That realization shifted subsequent iterations away from simply adding functionality and toward making system behavior more transparent.</p>
+											</div>	
+										</div>
+
+										<hr class="major" />
+
+										<h2>Small Details Shape Confidence</h2>
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<p>Not every usability finding resulted in a structural redesign.</p>
+
+												<p>Many of the most meaningful improvements were small.
+												Participants wanted more confidence when choosing parameter values.</p>
+
+												<p>They questioned dataset naming conventions.</p>
+
+												<p>They overlooked contextual help because interactive affordances were too subtle.</p>
+
+												<p>They suggested that previews or clearer explanations could help them understand how naming and model information would appear in downstream outputs and reports.</p>
+
+												<p>Individually, none of these observations justified redesigning an entire workflow.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<p>Collectively, they highlighted an important truth:</p>
+
+												<p>Professional software does not become easier to use by hiding complexity. It becomes easier to use by making complexity understandable.</p>
+
+												<p>Those insights informed refinements across tooltip behavior, modal help, parameter descriptions, empty states, labels, validation messaging, and naming conventions.</p>
+
+												<p>The interface did not need to become simpler in a superficial way.</p>
+												<p>It needed to become clearer.</p>
+											</div>	
+										</div>
+
+										<hr class="major" />
+
+										<h2>Validation Beyond Research</h2>
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<p>Usability testing represented only one source of validation.</p>
+
+												<p>Implementation reviews often uncovered equally valuable insights.</p>
+
+												<p>After engineering completed a feature, I reviewed the implementation within our testing environment to ensure interactions, spacing, responsiveness, and visual hierarchy aligned with the design intent.</p>
+
+												<p>Whenever discrepancies appeared, they became actionable DevOps work items rather than informal feedback.</p>
+
+												<p>This created a continuous refinement cycle where research informed design, design informed development, and implementation generated new opportunities for improvement.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<p>Rather than treating validation as a single milestone, the product evolved through many smaller feedback loops.</p>
+
+												<p>Looking back, that iterative process shaped the quality of the experience far more than any single redesign.</p>
+
+												<p>Design principle:</p>
+
+												<p>Great UX is not validated when users complete a task. It is validated when users understand the system well enough to predict what it will do next.</p>
+											</div>	
+										</div>
+
+										<hr class="major" />
+
+										<h2>Outcomes</h2>
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<p>The outcome of this work was not a single redesigned screen.</p>
+
+												<p>It was a more scalable model execution framework for BRYX.</p>
+
+												<p>The redesigned workflow consolidated navigation, reduced header density, improved visibility of progression controls, and created a stepper architecture that could adapt across desktop, tablet, and mobile layouts.</p>
+
+												<p>It also established a reusable interaction pattern that could support multiple AI models with different step counts, parameters, validation requirements, and output types.</p>
+
+												<p>For RoboClean and RoboFlat specifically, the integration reduced unnecessary manual work by allowing users to select RoboClean outputs directly inside the RoboFlat workflow rather than downloading, re-uploading, and manually converting files into datasets.</p>
+
+												<p>The resulting experience better aligned with BRYX’s broader product vision: helping engineering professionals use specialized AI models without needing to manage the technical complexity behind them.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<p>The work also strengthened the team’s product development process. Design reviews, usability testing, handoff rituals, implementation QA, and DevOps bug tracking became part of a continuous loop that allowed the experience to improve across multiple sprints.</p>
+
+												<p>Key outcomes included:</p>
+
+												<ul>
+													<li>A reusable model execution framework that could scale beyond RoboFlat.</li>
+													<li>A more responsive stepper component that adapted across viewport sizes.</li>
+													<li>A clearer relationship between workflow progress and navigation controls.</li>
+													<li>Reduced vertical density in the model run header.</li>
+													<li>A more discoverable RoboClean-to-RoboFlat integration.</li>
+													<li>Less manual file handling between connected AI models.</li>
+													<li>Stronger contextual guidance around parameters, outputs, and dataset creation.</li>
+													<li>A repeatable product design process connecting requirements, design, development, testing, and QA.</li>
+											</div>	
+										</div>
+
+										<hr class="major" />
+
+										<h2>Reflection: Designing AI Products as Systems</h2>
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<p>When I first designed BRYX, I did not have the full context of all of the various models that would be later developed and added to the platform.</p>
+
+												<p>As the platform evolved, I needed to adapt the model run framework to a variety of data models that included vision and sound analysis.</p>
+
+												<p>Every decision about navigation, information hierarchy, responsiveness, dataset management, and workflow continuity would eventually influence every model introduced to the platform.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<p>The project fundamentally changed how I think about product design.</p>
+
+												<p>Not because it introduced new design tools, but because it reinforced that successful platforms are built on reusable interaction patterns rather than isolated interfaces.</p>
+											</div>	
+										</div>
+
+										<hr class="major" />
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<h3>Design Systems Extend Beyond Visual Components</h3>
+
+												<p>We often think of design systems as buttons, typography, spacing, tokens, and components.</p>
+
+												<p>This project reminded me that workflows can be systematized as well.</p>
+
+												<p>By establishing a consistent model execution framework, each new AI capability could feel immediately familiar while remaining flexible enough to accommodate different technical requirements.</p>
+
+												<p>Consistency was not created through identical screens.</p>
+
+												<p>It was created through shared interaction patterns.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<h3>Responsive Design Is an Information Architecture Problem</h3>
+
+												<p>Every screen size changes how people consume information.</p>
+
+												<p>Designing for multiple devices required reconsidering hierarchy, interaction, and attention, not simply shrinking components to fit smaller displays.</p>
+
+												<p>The goal was not to preserve the desktop UI at every breakpoint.</p>
+
+												<p>The goal was to preserve the user's understanding.</p>
+											</div>	
+										</div>
+
+										<hr class="major" />
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<h3>Automation Should Reduce Effort, Not Understanding</h3>
+
+												<p>The best automation often goes unnoticed, but it should not become invisible in ways that confuse users.</p>
+
+												<p>The challenge is ensuring users still understand enough of the underlying process to trust the outcome.</p>
+
+												<p>Whenever automation removed manual work, the interface needed to replace that effort with clarity.</p>
+
+												<p>Consistency was not created through identical screens.</p>
+
+												<p>Confidence matters as much as efficiency.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<h3>Product Design Is Translation</h3>
+
+												<p>Throughout the project, I found myself translating continuously.</p>
+
+												<p>Business goals became workflows.</p>
+
+												<p>Machine learning requirements became interaction patterns.</p>
+
+												<p>Domain expertise became terminology, validation logic, and user guidance.</p>
+
+												<p>The most valuable contribution was not simply creating interfaces.</p>
+
+												<p>It was helping different disciplines arrive at a shared understanding of the product.</p>
+											</div>	
+										</div>
+
+										<hr class="major" />
+
+										<h3>Platforms Are Never Finished</h3>
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<p>Perhaps the biggest lesson BRYX taught me is that platforms do not reach a final design.</p>
+
+												<p>They evolve.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<p>Each new capability changes the context for every capability that came before it.</p>
+
+												<p>Designing for that reality means building systems flexible enough to evolve without forcing users to relearn the product every time it grows.</p>
+											</div>	
+										</div>
+
+										<hr class="major" />
+
+										<h2>Closing</h2>
+
+										<div class="row">
+											<div class="6u 12u$(small)">
+												<p>Looking back, I no longer see this project as the design of RoboFlat, RoboClean, or even one isolated BRYX workflow.</p>
+
+												<p>I see it as the process of defining an interaction architecture for an emerging AI platform.</p>
+
+												<p>What began as the workflow for a single engineering model gradually evolved into a reusable execution framework supporting multiple AI capabilities, responsive experiences, continuous usability refinement, and cross-functional collaboration.</p>
+											</div>
+											<div class="6u 12u$(small)">
+												<p>The interfaces changed.</p>
+
+												<p>The components evolved.</p>
+
+												<p>The workflows became more connected.</p>
+
+												<p>But the most meaningful outcome was not any individual screen.</p>
+
+												<p>It was establishing a foundation that allowed the platform to continue growing without sacrificing usability, consistency, or user confidence.</p>
+											</div>	
+										</div>
+
+
 
 
 

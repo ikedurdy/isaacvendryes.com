@@ -9,8 +9,11 @@
     const previous = controls.querySelector('[data-direction="-1"]');
     const next = controls.querySelector('[data-direction="1"]');
     const update = () => {
+      const lastItemRight = track.lastElementChild.getBoundingClientRect().right;
+      const viewportRight = track.getBoundingClientRect().left + track.clientLeft + track.clientWidth;
       previous.disabled = track.scrollLeft <= 1;
-      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      // Scroll snapping can expose the final item before the raw scroll limit.
+      next.disabled = lastItemRight <= viewportRight + 2 || track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
     };
     controls.addEventListener('click', event => {
       const button = event.target.closest('button');
@@ -31,13 +34,20 @@
   const enlarged = dialog.querySelector('img');
   const caption = dialog.querySelector('.lightbox-caption');
   let opener;
+  const lightboxSource = link => {
+    const still = link.querySelector('source[media="(prefers-reduced-motion: reduce)"]');
+    return reducedMotion.matches && still ? still.srcset : link.href;
+  };
+  reducedMotion.addEventListener('change', () => {
+    if (dialog.open && opener) enlarged.src = lightboxSource(opener);
+  });
 
   document.addEventListener('click', event => {
     const link = event.target.closest('a[data-lightbox]');
     if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
     event.preventDefault();
     opener = link;
-    enlarged.src = link.href;
+    enlarged.src = lightboxSource(link);
     enlarged.alt = link.querySelector('img').alt;
     caption.textContent = link.closest('figure').querySelector('figcaption')?.textContent || '';
     dialog.showModal();

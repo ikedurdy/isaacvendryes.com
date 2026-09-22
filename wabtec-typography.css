@@ -1,0 +1,38 @@
+/* Loaded only by Wabtec. Figma 1:356; New York and medium thumbnail
+   labels are the user's intentional overrides. Media geometry stays in styles.css. */
+h1, h2, h3 { text-wrap: wrap; }
+
+.eyebrow { font-size: 12px; line-height: 1.6; color: #969696; }
+.case-intro .eyebrow, .case-section > .eyebrow { text-transform: capitalize; }
+.case-intro .columns > div:first-child > p:last-child { font-weight: 500; }
+.case-section:has(> .wabtec-search-media) > .eyebrow,
+.case-section:has(> .wabtec-answer-media) > .eyebrow,
+.case-section:has(> .wabtec-escalation-media) > .eyebrow,
+.case-section:has(> .wabtec-theme-media) > .eyebrow { text-transform: uppercase; }
+
+/* These introductions and detail lists use Figma's tighter 155% leading. */
+.wabtec-type-compact > .eyebrow,
+.wabtec-type-compact > .columns h2,
+.wabtec-type-compact > .columns p,
+.wabtec-discovery > p:not(.eyebrow),
+.wabtec-discovery .detail-list,
+.wabtec-trust-model > .eyebrow,
+.wabtec-trust-model .detail-list,
+.wabtec-influence > .panel > .eyebrow { line-height: 1.55; }
+.wabtec-synthesis > p:not(.eyebrow) { font-weight: 500; line-height: 1.55; }
+th { font-size: 12px; line-height: 1.55; color: #969696; }
+td { font-size: 13px; line-height: 1.55; }
+
+/* Caption line boxes, rather than panel padding or heights, determine the flow. */
+.wabtec-search-media > .figure > figcaption,
+.wabtec-answer-media > .figure > figcaption { font-size: 14px; line-height: 1.6; }
+.gallery-track figcaption { font-size: 14px; font-weight: 500; line-height: 1.6; }
+.wabtec-knowledge-media > .eyebrow,
+.wabtec-escalation-media > .eyebrow { line-height: 1.5; }
+.wabtec-sme-media > .eyebrow { line-height: 1.55; }
+.wabtec-knowledge-media > p:not(.eyebrow),
+.wabtec-escalation-media > .eyebrow + p { font-size: 13px; line-height: 1.5; }
+.wabtec-sme-media > p:not(.eyebrow) { font-size: 13px; line-height: 1.55; }
+.wabtec-diagram-carousel .flow-track li { font-size: 13px; font-weight: 500; line-height: 1.5; }
+.wabtec-theme-media figcaption { font-size: 12px; font-weight: 400; line-height: 1.6; color: #969696; text-transform: uppercase; }
+.wabtec-reflection-note h3 { font-family: var(--font-sans); font-size: 14px; font-weight: 500; line-height: 1.6; }

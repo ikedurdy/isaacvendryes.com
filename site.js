@@ -1,0 +1,50 @@
+/* Native scrolling stays native. The edge blur is entirely CSS. */
+(() => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  document.querySelectorAll('.gallery').forEach(gallery => {
+    const track = gallery.querySelector(':scope > .gallery-track');
+    if (!track) return;
+    const controls = gallery.querySelector(':scope > .gallery-controls');
+    const previous = controls.querySelector('[data-direction="-1"]');
+    const next = controls.querySelector('[data-direction="1"]');
+    const update = () => {
+      previous.disabled = track.scrollLeft <= 1;
+      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    };
+    controls.addEventListener('click', event => {
+      const button = event.target.closest('button');
+      if (!button) return;
+      track.scrollBy({
+        left: Number(button.dataset.direction) * (track.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap)),
+        behavior: reducedMotion.matches ? 'instant' : 'smooth'
+      });
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    if ('ResizeObserver' in window) new ResizeObserver(update).observe(track);
+    else window.addEventListener('resize', update);
+    update();
+  });
+
+  const dialog = document.querySelector('.lightbox');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  const enlarged = dialog.querySelector('img');
+  const caption = dialog.querySelector('.lightbox-caption');
+  let opener;
+
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[data-lightbox]');
+    if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+    event.preventDefault();
+    opener = link;
+    enlarged.src = link.href;
+    enlarged.alt = link.querySelector('img').alt;
+    caption.textContent = link.closest('figure').querySelector('figcaption')?.textContent || '';
+    dialog.showModal();
+  });
+  dialog.querySelector('button').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => opener?.focus({ preventScroll: true }));
+})();

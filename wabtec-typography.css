@@ -5,6 +5,11 @@ h1, h2, h3 { text-wrap: wrap; }
 .eyebrow { font-size: 12px; line-height: 1.6; color: #969696; }
 .case-intro .eyebrow, .case-section > .eyebrow { text-transform: capitalize; }
 .case-intro .columns > div:first-child > p:last-child { font-weight: 500; }
+/* Keep eyebrow-to-text spacing at 16px without changing other panel gaps. */
+.panel > .eyebrow + .detail-list { margin-top: 16px; }
+.wabtec-knowledge-media > .eyebrow { margin-bottom: -16px; }
+.wabtec-sme-media > .eyebrow,
+.wabtec-escalation-media > .eyebrow { margin-bottom: -8px; }
 .case-section:has(> .wabtec-search-media) > .eyebrow,
 .case-section:has(> .wabtec-answer-media) > .eyebrow,
 .case-section:has(> .wabtec-escalation-media) > .eyebrow,

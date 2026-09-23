@@ -157,18 +157,25 @@
 <p class="">The shortcut still created a dataset and consumed storage. The interface needed to explain that behavior and provide a recovery path when capacity was unavailable.</p>
 </div>
 </div>
+<div class="bryx-editorial-media bryx-feedback-media">
+<div class="bryx-media-state">
 <h3>Capacity available: inform, then allow progress.</h3>
 <figure class="figure ">
 <a class="image-link" href="img/bryx_validation_dataset_creation.png" data-lightbox aria-label="Enlarge Informational feedback makes dataset creation and storage use explicit."><img src="img/bryx_validation_dataset_creation.png" width="1996" height="903" alt="Informational feedback makes dataset creation and storage use explicit." loading="lazy" decoding="async">
 </a>
 <figcaption>Informational feedback makes dataset creation and storage use explicit.</figcaption>
 </figure>
+</div>
+<div class="bryx-editorial-divider" aria-hidden="true"></div>
+<div class="bryx-media-state">
 <h3>Capacity insufficient: block, then offer recovery.</h3>
 <figure class="figure ">
 <a class="image-link" href="img/bryx_validation_insufficient_storage.png" data-lightbox aria-label="Enlarge A blocking state explains the storage constraint and offers a next action."><img src="img/bryx_validation_insufficient_storage.png" width="1996" height="937" alt="A blocking state explains the storage constraint and offers a next action." loading="lazy" decoding="async">
 </a>
 <figcaption>A blocking state explains the storage constraint and offers a next action.</figcaption>
 </figure>
+</div>
+</div>
 </section>
 <section class="case-section">
 <p class="eyebrow">Design decision / Responsive navigation</p>
@@ -180,6 +187,9 @@
 <p class="">The integration added pressure to a dense model-run step. I explored ways to consolidate navigation while preserving room for data, parameters, and validation feedback.</p>
 </div>
 </div>
+<div class="bryx-editorial-media bryx-navigation-media">
+<div class="bryx-media-state">
+<div class="bryx-media-heading">
 <p class="eyebrow">V1 / Rejected</p>
 <div class="columns">
 <div>
@@ -189,11 +199,16 @@
 <p class="">Actions stayed visible, but a second sticky region compressed the usable viewport.</p>
 </div>
 </div>
+</div>
 <figure class="figure ">
 <a class="image-link" href="img/bryx_navigation_v1_sticky_controls.png" data-lightbox aria-label="Enlarge Exploration: persistent controls at the bottom of the workflow."><img src="img/bryx_navigation_v1_sticky_controls.png" width="1998" height="1502" alt="Exploration: persistent controls at the bottom of the workflow." loading="lazy" decoding="async">
 </a>
 <figcaption>Exploration: persistent controls at the bottom of the workflow.</figcaption>
 </figure>
+</div>
+<div class="bryx-editorial-divider" aria-hidden="true"></div>
+<div class="bryx-media-state">
+<div class="bryx-media-heading">
 <p class="eyebrow">V2 / Refined</p>
 <div class="columns">
 <div>
@@ -203,11 +218,14 @@
 <p class="">Progress and navigation came together, but the layout still needed to be responsive.</p>
 </div>
 </div>
+</div>
 <figure class="figure ">
 <a class="image-link" href="img/bryx_navigation_v2_stepper_controls.png" data-lightbox aria-label="Enlarge Exploration: navigation controls alongside workflow progress."><img src="img/bryx_navigation_v2_stepper_controls.png" width="1998" height="1502" alt="Exploration: navigation controls alongside workflow progress." loading="lazy" decoding="async">
 </a>
 <figcaption>Exploration: navigation controls alongside workflow progress.</figcaption>
 </figure>
+</div>
+</div>
 </section>
 <section class="case-section">
 <p class="eyebrow">V3 / Selected direction</p>
@@ -219,6 +237,9 @@
 <p class="">Desktop keeps the workflow overview and navigation together. Narrow screens prioritize the current step, the next action, and enough context to keep users oriented.</p>
 </div>
 </div>
+<div class="bryx-editorial-media bryx-selected-media">
+<div class="bryx-media-state">
+<div class="bryx-media-heading">
 <p class="eyebrow">V3 / Desktop</p>
 <div class="columns">
 <div>
@@ -228,11 +249,17 @@
 <p class="">Converting the Datasets and RoboClean Results tables to lists made the info more scannable and mobile friendly.</p>
 </div>
 </div>
-<figure class="figure ">
+</div>
+<figure class="figure bryx-selected-desktop">
+<a class="image-link" href="img/bryx_navigation_v3_datasets_desktop.png" data-lightbox aria-label="Enlarge RoboFlat datasets in the selected desktop workflow"><img src="img/bryx_navigation_v3_datasets_desktop.png" width="2558" height="1662" alt="RoboFlat datasets in the selected desktop workflow" loading="lazy" decoding="async"></a>
 <a class="image-link" href="img/bryx_navigation_v3_desktop.png" data-lightbox aria-label="Enlarge Desktop. A shared location for progress and navigation."><img src="img/bryx_navigation_v3_desktop.png" width="2560" height="1664" alt="Desktop. A shared location for progress and navigation." loading="lazy" decoding="async">
 </a>
 <figcaption>Desktop. A shared location for progress and navigation.</figcaption>
 </figure>
+</div>
+<div class="bryx-editorial-divider" aria-hidden="true"></div>
+<div class="bryx-media-state">
+<div class="bryx-media-heading">
 <p class="eyebrow">V3 / mobile</p>
 <div class="columns">
 <div>
@@ -242,7 +269,8 @@
 <p class="">Prioritizing the current step’s actions helped to determine what information remained prominent on small screens.</p>
 </div>
 </div>
-<div class="columns">
+</div>
+<div class="columns bryx-mobile-comparison">
 <div>
 <figure class="figure ">
 <a class="image-link" href="img/bryx_navigation_v3_mobile.png" data-lightbox aria-label="Enlarge Annotated mobile RoboFlat workflow with compact navigation and stacked dataset details"><img src="img/bryx_navigation_v3_mobile.png" width="876" height="1233" alt="Annotated mobile RoboFlat workflow with compact navigation and stacked dataset details" loading="lazy" decoding="async">
@@ -262,6 +290,8 @@
 </ol>
 </div>
 </div>
+</div>
+</div>
 </section>
 <section class="case-section">
 <p class="eyebrow">Framework</p>
@@ -273,12 +303,14 @@
 <p class="">RoboFlat shared a recognizable operating structure with other BRYX models while retaining its own configuration and validation needs. The integration became part of a broader model-run framework.</p>
 </div>
 </div>
-<figure class="figure ">
+<div class="bryx-editorial-media bryx-framework-media">
+<figure class="figure bryx-framework-diagram">
+<figcaption>Shared model run framework</figcaption>
 <a class="image-link" href="img/bryx_shared_framework_diagram.png" data-lightbox aria-label="Enlarge Shared model run framework"><img src="img/bryx_shared_framework_diagram.png" width="4096" height="1758" alt="Shared model run framework" loading="lazy" decoding="async">
 </a>
-<figcaption>Shared model run framework</figcaption>
 </figure>
-<div class="columns">
+<div class="bryx-editorial-divider" aria-hidden="true"></div>
+<div class="columns bryx-framework-examples">
 <div>
 <figure class="figure ">
 <a class="image-link" href="img/roboflat_enter_params.png" data-lightbox aria-label="Enlarge RoboFlat. The shared workflow structure with model-specific requirements."><img src="img/roboflat_enter_params.png" width="1996" height="1502" alt="RoboFlat. The shared workflow structure with model-specific requirements." loading="lazy" decoding="async">
@@ -294,6 +326,7 @@
 </figure>
 </div>
 </div>
+</div>
 </section>
 <section class="case-section">
 <p class="eyebrow">Usability validation</p>
@@ -305,16 +338,19 @@
 <p class="">In a follow-up usability test with five participants, users found the integration inside RoboFlat and completed the connection in fewer steps.</p>
 </div>
 </div>
-<figure class="figure ">
+<div class="bryx-editorial-media bryx-flows-media">
+<figure class="figure bryx-original-flow">
+<figcaption>Original and updated task flows: from an available RoboClean output to selected, validated data in RoboFlat.</figcaption>
 <a class="image-link" href="img/bryx_original_task_flow.png" data-lightbox aria-label="Enlarge Original and updated task flows: from an available RoboClean output to selected, validated data in RoboFlat."><img src="img/bryx_original_task_flow.png" width="4096" height="711" alt="Original and updated task flows: from an available RoboClean output to selected, validated data in RoboFlat." loading="lazy" decoding="async">
 </a>
-<figcaption>Original and updated task flows: from an available RoboClean output to selected, validated data in RoboFlat.</figcaption>
 </figure>
-<figure class="figure ">
+<div class="bryx-editorial-divider" aria-hidden="true"></div>
+<figure class="figure bryx-updated-flow">
 <a class="image-link" href="img/bryx_updated_task_flow.png" data-lightbox aria-label="Enlarge Updated workflow: connect RoboClean results directly inside RoboFlat"><img src="img/bryx_updated_task_flow.png" width="3690" height="1572" alt="Updated workflow: connect RoboClean results directly inside RoboFlat" loading="lazy" decoding="async">
 </a>
 <figcaption>Updated workflow: connect RoboClean results directly inside RoboFlat</figcaption>
 </figure>
+</div>
 <div class="panel">
 <p class="eyebrow">Observed change</p>
 <p class="">The handoff became part of the model workflow instead of a separate data-management task.</p>

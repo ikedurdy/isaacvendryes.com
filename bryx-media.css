@@ -39,3 +39,63 @@
   height: 1px;
   background: var(--line);
 }
+
+/* Remaining editorial panels. The approved Data Selection rules stay separate. */
+.bryx-editorial-media {
+  min-width: 0;
+  display: grid;
+  gap: 32px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.bryx-editorial-media > .bryx-editorial-divider { height: 1px; background: var(--line); }
+.bryx-editorial-media .bryx-media-state { display: grid; min-width: 0; gap: 16px; }
+.bryx-editorial-media .bryx-media-heading { display: grid; gap: 4px; }
+.bryx-editorial-media .bryx-media-heading > .columns { display: flex; flex-direction: column; gap: 4px; }
+.bryx-editorial-media .figure { display: flex; flex-direction: column; gap: 16px; }
+.bryx-editorial-media figcaption { margin: 0; }
+.bryx-editorial-media .image-link { position: relative; min-width: 0; }
+.bryx-editorial-media .image-link img { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* Feedback screenshots include transparent callout tails below the image frame. */
+.bryx-feedback-media .figure { gap: 32px; }
+.bryx-feedback-media figcaption { text-align: center; }
+.bryx-feedback-media .image-link { aspect-ratio: 768 / 317; border: 1px solid var(--line); border-bottom: 0; border-radius: 3px 3px 0 0; }
+.bryx-feedback-media .image-link img { height: auto; aspect-ratio: 766 / 347; object-fit: contain; border-radius: 3px 3px 0 0; }
+.bryx-feedback-media > .bryx-media-state:last-child .image-link { aspect-ratio: 768 / 331; }
+.bryx-feedback-media > .bryx-media-state:last-child img { aspect-ratio: 766 / 360; }
+
+/* Exploration screenshots retain their full contents and individual frame sizes. */
+.bryx-navigation-media .image-link { aspect-ratio: 768 / 580; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+.bryx-navigation-media img { object-fit: contain; }
+.bryx-navigation-media > .bryx-media-state:first-child .image-link { width: calc(100% + 2px); align-self: center; aspect-ratio: 770 / 580; }
+
+/* Selected direction: two large desktop states, then mobile image and annotations. */
+.bryx-selected-desktop > .image-link { width: calc(100% + 2px); align-self: center; aspect-ratio: 770 / 500; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+.bryx-selected-desktop > .image-link img { object-fit: contain; }
+.bryx-selected-desktop > .image-link:first-child img { object-fit: cover; }
+.bryx-selected-media .bryx-mobile-comparison { grid-template-columns: minmax(0, 359fr) minmax(0, 393fr); gap: 16px; }
+.bryx-mobile-comparison .image-link { aspect-ratio: 359 / 507; }
+.bryx-mobile-comparison img { object-fit: contain; }
+.bryx-mobile-comparison > div:last-child { padding: 16px; border: 1px solid var(--line); border-radius: 3px; background: #fff; }
+.bryx-mobile-comparison .steps { padding-left: 21px; }
+.bryx-mobile-comparison .steps li { padding-left: 8px; }
+
+/* Framework: dominant diagram, followed by two smaller product examples. */
+.bryx-framework-diagram .image-link { aspect-ratio: 768 / 310; }
+.bryx-framework-diagram img { object-fit: contain; border-radius: 0; }
+.bryx-framework-media .bryx-framework-examples { gap: 16px; }
+.bryx-framework-examples .image-link { aspect-ratio: 376 / 283; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+.bryx-framework-examples img { object-fit: contain; }
+.bryx-framework-examples > div:first-child img { left: .04%; top: .01%; height: 99.98%; object-fit: fill; }
+
+/* Task flows use a shallow crop above a larger, fully contained diagram. */
+.bryx-original-flow .image-link { aspect-ratio: 768 / 120; overflow: hidden; }
+.bryx-original-flow .image-link img { left: .04%; top: .01%; height: 110.8%; object-fit: fill; border-radius: 0; }
+.bryx-updated-flow .image-link { aspect-ratio: 768 / 327; }
+.bryx-updated-flow img { object-fit: contain; border-radius: 0; }
+
+@media (max-width: 599px) {
+  .bryx-selected-media .bryx-mobile-comparison { grid-template-columns: minmax(0, 1fr); }
+}

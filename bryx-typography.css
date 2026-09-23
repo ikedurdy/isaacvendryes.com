@@ -1,4 +1,12 @@
 /* BRYX typography — Figma 1:64. Media geometry remains in bryx-media.css. */
+@font-face {
+  font-family: "BRYX Caption Semibold";
+  src: url("fonts/google-sans-flex-600.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
 .case-content .eyebrow { color: #969696; }
 .case-intro > .columns > div:first-child > p:not(.eyebrow) { font-weight: 500; }
 
@@ -19,8 +27,13 @@
 }
 
 .bryx-editorial-media figcaption { font-size: 14px; line-height: 1.6; }
+.bryx-data-selection-media figcaption strong,
 .bryx-editorial-media figcaption strong,
 .bryx-framework-diagram figcaption,
-.bryx-framework-examples > div:last-child figcaption { font-weight: 600; }
+.bryx-framework-examples > div:last-child figcaption {
+  font-family: "BRYX Caption Semibold", var(--font-sans);
+  font-weight: 600;
+  font-synthesis: none;
+}
 
 .bryx-reflection { font: 400 20px/1.6 var(--font-serif); }

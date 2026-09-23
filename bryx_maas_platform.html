@@ -8,6 +8,7 @@
   <title>BRYX — AI &amp; ML workflow design — Isaac Vendryes</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="bryx-media.css">
+  <link rel="stylesheet" href="bryx-typography.css">
   <script src="site.js" defer></script>
 </head>
 <body class="case">
@@ -124,7 +125,7 @@
 </div>
 </section>
 <section class="case-section">
-<p class="eyebrow">Design decision / Data selection</p>
+<p class="eyebrow bryx-decision-label">Design decision / Data selection</p>
 <div class="columns">
 <div>
 <h2>Put the integration where the next decision happens.</h2>
@@ -148,7 +149,7 @@
 </div>
 </section>
 <section class="case-section">
-<p class="eyebrow">Design decision / System feedback</p>
+<p class="eyebrow bryx-decision-label">Design decision / System feedback</p>
 <div class="columns">
 <div>
 <h2>Make the invisible system action understandable.</h2>
@@ -178,7 +179,7 @@
 </div>
 </section>
 <section class="case-section">
-<p class="eyebrow">Design decision / Responsive navigation</p>
+<p class="eyebrow bryx-decision-label">Design decision / Responsive navigation</p>
 <div class="columns">
 <div>
 <h2>Keep progress and navigation in the same field of view.</h2>
@@ -203,7 +204,7 @@
 <figure class="figure ">
 <a class="image-link" href="img/bryx_navigation_v1_sticky_controls.png" data-lightbox aria-label="Enlarge Exploration: persistent controls at the bottom of the workflow."><img src="img/bryx_navigation_v1_sticky_controls.png" width="1998" height="1502" alt="Exploration: persistent controls at the bottom of the workflow." loading="lazy" decoding="async">
 </a>
-<figcaption>Exploration: persistent controls at the bottom of the workflow.</figcaption>
+<figcaption><strong>Exploration:</strong> persistent controls at the bottom of the workflow.</figcaption>
 </figure>
 </div>
 <div class="bryx-editorial-divider" aria-hidden="true"></div>
@@ -222,13 +223,13 @@
 <figure class="figure ">
 <a class="image-link" href="img/bryx_navigation_v2_stepper_controls.png" data-lightbox aria-label="Enlarge Exploration: navigation controls alongside workflow progress."><img src="img/bryx_navigation_v2_stepper_controls.png" width="1998" height="1502" alt="Exploration: navigation controls alongside workflow progress." loading="lazy" decoding="async">
 </a>
-<figcaption>Exploration: navigation controls alongside workflow progress.</figcaption>
+<figcaption><strong>Exploration:</strong> navigation controls alongside workflow progress.</figcaption>
 </figure>
 </div>
 </div>
 </section>
 <section class="case-section">
-<p class="eyebrow">V3 / Selected direction</p>
+<p class="eyebrow bryx-decision-label">V3 / Selected direction</p>
 <div class="columns">
 <div>
 <h2>A responsive, consolidated pattern</h2>
@@ -254,7 +255,7 @@
 <a class="image-link" href="img/bryx_navigation_v3_datasets_desktop.png" data-lightbox aria-label="Enlarge RoboFlat datasets in the selected desktop workflow"><img src="img/bryx_navigation_v3_datasets_desktop.png" width="2558" height="1662" alt="RoboFlat datasets in the selected desktop workflow" loading="lazy" decoding="async"></a>
 <a class="image-link" href="img/bryx_navigation_v3_desktop.png" data-lightbox aria-label="Enlarge Desktop. A shared location for progress and navigation."><img src="img/bryx_navigation_v3_desktop.png" width="2560" height="1664" alt="Desktop. A shared location for progress and navigation." loading="lazy" decoding="async">
 </a>
-<figcaption>Desktop. A shared location for progress and navigation.</figcaption>
+<figcaption><strong>Desktop.</strong> A shared location for progress and navigation.</figcaption>
 </figure>
 </div>
 <div class="bryx-editorial-divider" aria-hidden="true"></div>
@@ -315,7 +316,7 @@
 <figure class="figure ">
 <a class="image-link" href="img/roboflat_enter_params.png" data-lightbox aria-label="Enlarge RoboFlat. The shared workflow structure with model-specific requirements."><img src="img/roboflat_enter_params.png" width="1996" height="1502" alt="RoboFlat. The shared workflow structure with model-specific requirements." loading="lazy" decoding="async">
 </a>
-<figcaption>RoboFlat. The shared workflow structure with model-specific requirements.</figcaption>
+<figcaption><strong>RoboFlat.</strong> The shared workflow structure with model-specific requirements.</figcaption>
 </figure>
 </div>
 <div>
@@ -329,7 +330,7 @@
 </div>
 </section>
 <section class="case-section">
-<p class="eyebrow">Usability validation</p>
+<p class="eyebrow bryx-section-label">Usability validation</p>
 <div class="columns">
 <div>
 <h2>5/5 usability participants found the integration inside RoboFlat and completed the connection in fewer steps.</h2>
@@ -352,12 +353,12 @@
 </figure>
 </div>
 <div class="panel">
-<p class="eyebrow">Observed change</p>
-<p class="">The handoff became part of the model workflow instead of a separate data-management task.</p>
+<p class="eyebrow bryx-observed-label">Observed change</p>
+<p class="bryx-reflection">The handoff became part of the model workflow instead of a separate data-management task.</p>
 </div>
 </section>
 <section class="case-section">
-<p class="eyebrow">Implementation &amp; QA</p>
+<p class="eyebrow bryx-section-label">Implementation &amp; QA</p>
 <div class="columns">
 <div>
 <h2>The design work continued into implementation.</h2>
@@ -368,7 +369,7 @@
 </div>
 </section>
 <section class="case-section">
-<p class="eyebrow">Outcome &amp; reflection</p>
+<p class="eyebrow bryx-section-label">Outcome &amp; reflection</p>
 <div class="columns">
 <div>
 <h2>A shorter workflow that still told users what the system was doing.</h2>
@@ -377,7 +378,7 @@
 <p class="">The tested experience connected RoboClean and RoboFlat at data selection, made dataset creation and storage consequences visible, and improved navigation through a dense model-run workflow.</p>
 </div>
 </div>
-<p class="">Complex product design is often about deciding when users need to understand the system’s rules. Here, the right answer was to hide the manual handoff while making its consequences clear.</p>
+<p class="bryx-reflection">Complex product design is often about deciding when users need to understand the system’s rules. Here, the right answer was to hide the manual handoff while making its consequences clear.</p>
 </section>
 <footer class="case-footer">
 <a href="index.html"><img class="icon" src="icons/back.svg" width="16" height="16" alt="">All projects</a>

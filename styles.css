@@ -78,7 +78,9 @@ img { display: block; max-width: 100%; height: auto; }
 .project-image img { width: 100%; max-height: 100%; object-fit: contain; border-radius: 3px; box-shadow: 0 0 32px -11px #8f8c9a; transition: transform .45s ease; }
 a.project-card:hover .project-image img { transform: scale(1.018); }
 a.project-card:hover h2 { color: #222; }
-.project-image.dispatch img { height: 100%; object-fit: cover; object-position: left center; }
+.project-image.dispatch { aspect-ratio: 480 / 390; }
+.project-image.dispatch .dispatch-mask { position: relative; width: 100%; aspect-ratio: 416 / 326; overflow: hidden; border-radius: 3.484px; }
+.project-image.dispatch img { position: absolute; top: 0; left: 0; width: 139.32%; max-width: none; height: 100%; object-fit: fill; border-radius: 0; box-shadow: none; }
 .project-meta { font-size: 12px; line-height: 1.6; }
 .project-meta h2 { font: 500 12px/1.6 var(--font-sans); }
 

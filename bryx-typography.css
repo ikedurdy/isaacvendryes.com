@@ -29,8 +29,7 @@
 .bryx-editorial-media figcaption { font-size: 14px; line-height: 1.6; }
 .bryx-data-selection-media figcaption strong,
 .bryx-editorial-media figcaption strong,
-.bryx-framework-diagram figcaption,
-.bryx-framework-examples > div:last-child figcaption {
+.bryx-framework-diagram figcaption {
   font-family: "BRYX Caption Semibold", var(--font-sans);
   font-weight: 600;
   font-synthesis: none;

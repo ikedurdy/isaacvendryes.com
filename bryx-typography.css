@@ -7,7 +7,7 @@
   font-display: swap;
 }
 
-.case-content .eyebrow { color: #969696; }
+.case-content .eyebrow { color: #737373; }
 .case-intro > .columns > div:first-child > p:not(.eyebrow) { font-weight: 500; }
 
 .case-content .bryx-decision-label,
@@ -21,7 +21,7 @@
 .bryx-media-heading h2,
 .bryx-media-heading h3 { font: 500 14px/1.6 var(--font-sans); }
 .bryx-mobile-comparison h3 {
-  color: #969696;
+  color: #737373;
   font: 400 12px/1.6 var(--font-sans);
   text-transform: uppercase;
 }

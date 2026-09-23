@@ -1,0 +1,41 @@
+/* BRYX Data Selection only — Figma 1:181. */
+.bryx-data-selection-media {
+  min-width: 0;
+  display: grid;
+  gap: 32px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.bryx-data-selection-media > .figure {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.bryx-data-selection-media figcaption {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.bryx-data-selection-media figcaption strong { font-weight: 600; }
+.bryx-data-selection-media .image-link {
+  position: relative;
+  aspect-ratio: 768 / 310;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  border-radius: 3px 3px 0 0;
+}
+.bryx-data-selection-media > .figure:last-child .image-link { aspect-ratio: 768 / 319; }
+.bryx-data-selection-media .image-link img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+.bryx-data-selection-media > .bryx-data-selection-divider {
+  height: 1px;
+  background: var(--line);
+}

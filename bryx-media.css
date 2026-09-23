@@ -1,3 +1,7 @@
+@media (min-width: 600px) {
+  .bryx-solution-panels > div > .panel { height: 100%; }
+}
+
 /* BRYX Data Selection only — Figma 1:181. */
 .bryx-data-selection-media {
   min-width: 0;
